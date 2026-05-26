@@ -1,0 +1,1673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calwood Flooring Supply — Product Catalog</title>
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --brand:      #1a3a2a;
+      --brand-mid:  #2d5c42;
+      --accent:     #c8972a;
+      --accent-lt:  #f5e6c0;
+      --gray-50:    #f8f8f6;
+      --gray-100:   #eeede8;
+      --gray-300:   #c9c7be;
+      --gray-500:   #7a7870;
+      --gray-800:   #2e2d28;
+      --white:      #ffffff;
+      --radius:     10px;
+      --shadow:     0 2px 12px rgba(0,0,0,.10);
+      --shadow-lg:  0 6px 24px rgba(0,0,0,.14);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--gray-50);
+      color: var(--gray-800);
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    /* ── Header ── */
+    .site-header {
+      background: var(--brand);
+      color: var(--white);
+      padding: 0 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow-lg);
+    }
+    .header-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-mark {
+      width: 36px; height: 36px;
+      background: var(--accent);
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 18px; color: var(--brand);
+      letter-spacing: -1px;
+    }
+    .logo-text { font-size: 17px; font-weight: 700; letter-spacing: .3px; }
+    .logo-sub  { font-size: 11px; opacity: .7; letter-spacing: 1px; text-transform: uppercase; }
+    .header-contact a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    /* ── Hero band ── */
+    .hero {
+      background: linear-gradient(135deg, var(--brand-mid) 0%, var(--brand) 100%);
+      color: var(--white);
+      text-align: center;
+      padding: 36px 20px 32px;
+    }
+    .hero h1 { font-size: 24px; font-weight: 800; margin-bottom: 6px; }
+    .hero p  { font-size: 14px; opacity: .85; max-width: 480px; margin: 0 auto 20px; }
+    .hero-badges { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+    .badge {
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .3px;
+    }
+
+    /* ── Collection nav tabs ── */
+    .collection-nav {
+      background: var(--white);
+      border-bottom: 2px solid var(--gray-100);
+      position: sticky;
+      top: 60px;
+      z-index: 90;
+    }
+    .collection-nav-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+    .collection-nav-inner::-webkit-scrollbar { display: none; }
+    .col-tab {
+      flex: 0 0 auto;
+      padding: 14px 20px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--gray-500);
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      white-space: nowrap;
+      transition: color .2s, border-color .2s;
+      text-decoration: none;
+      display: block;
+    }
+    .col-tab:hover { color: var(--brand); }
+    .col-tab.active { color: var(--brand); border-bottom-color: var(--accent); }
+
+    /* ── Filter bar ── */
+    .filter-bar {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .filter-label { font-size: 12px; font-weight: 600; color: var(--gray-500); margin-right: 2px; }
+    .filter-chip {
+      border: 1.5px solid var(--gray-300);
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--gray-500);
+      cursor: pointer;
+      background: var(--white);
+      transition: all .15s;
+    }
+    .filter-chip:hover, .filter-chip.active {
+      background: var(--brand);
+      border-color: var(--brand);
+      color: var(--white);
+    }
+
+    /* ── Section headings ── */
+    .section-heading {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px 20px 8px;
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+    .section-heading h2 {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--brand);
+    }
+    .section-heading .section-sub {
+      font-size: 13px;
+      color: var(--gray-500);
+    }
+    .section-divider {
+      max-width: 900px;
+      margin: 0 auto 4px;
+      padding: 0 20px;
+    }
+    .section-divider hr {
+      border: none;
+      border-top: 2px solid var(--gray-100);
+    }
+    .collection-meta {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px 16px;
+      font-size: 13px;
+      color: var(--gray-500);
+      line-height: 1.6;
+    }
+
+    /* ── Product grid ── */
+    .product-grid {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4px 20px 32px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+    }
+
+    /* ── Product card ── */
+    .product-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform .2s, box-shadow .2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .product-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+    }
+    .product-card.hidden { display: none; }
+
+    /* ── Product image ── */
+    .product-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+    }
+    .product-img-placeholder {
+      width: 100%;
+      aspect-ratio: 4/3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .5px;
+      color: rgba(255,255,255,.75);
+      position: relative;
+      overflow: hidden;
+    }
+    .product-img-placeholder::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,.25) 100%);
+    }
+    .placeholder-name {
+      font-size: 15px;
+      font-weight: 700;
+      text-shadow: 0 1px 4px rgba(0,0,0,.4);
+      position: relative;
+      z-index: 1;
+    }
+    .placeholder-add {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: .7;
+      margin-top: 4px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Color-family swatch backgrounds */
+    .bg-white   { background: linear-gradient(135deg, #f0ede6, #ddd8cc); color: var(--gray-800) !important; }
+    .bg-beige   { background: linear-gradient(135deg, #d4bc94, #b89f72); }
+    .bg-gray    { background: linear-gradient(135deg, #8a8a80, #6a6a60); }
+    .bg-brown   { background: linear-gradient(135deg, #6b4f35, #4a3320); }
+    .bg-natural { background: linear-gradient(135deg, #c4a96e, #9e8252); }
+    .bg-rustic  { background: linear-gradient(135deg, #a0896a, #7a6a50); }
+    .bg-unfinished { background: linear-gradient(135deg, #e8d9b8, #c8b890); color: var(--gray-800) !important; }
+
+    /* ── Product info ── */
+    .product-info { padding: 14px; flex: 1; display: flex; flex-direction: column; }
+    .product-color-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--brand);
+      margin-bottom: 2px;
+    }
+    .product-collection-tag {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .product-specs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px 8px;
+      margin-bottom: 10px;
+      flex: 1;
+    }
+    .spec-item { display: flex; flex-direction: column; }
+    .spec-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+      color: var(--gray-500);
+      font-weight: 600;
+    }
+    .spec-value {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--gray-800);
+    }
+    .product-price {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--brand);
+      margin-bottom: 10px;
+    }
+    .product-price span { font-size: 13px; font-weight: 500; color: var(--gray-500); }
+    .product-sku {
+      font-size: 11px;
+      color: var(--gray-500);
+      margin-bottom: 10px;
+      font-family: monospace;
+    }
+    .product-actions { display: flex; gap: 8px; }
+    .btn {
+      flex: 1;
+      padding: 9px 12px;
+      border-radius: 7px;
+      font-size: 12px;
+      font-weight: 700;
+      text-align: center;
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+      display: block;
+      transition: background .15s, transform .1s;
+    }
+    .btn:active { transform: scale(.97); }
+    .btn-primary { background: var(--brand); color: var(--white); }
+    .btn-primary:hover { background: var(--brand-mid); }
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid var(--brand);
+      color: var(--brand);
+    }
+    .btn-outline:hover { background: var(--brand); color: var(--white); }
+
+    /* ── CTA section ── */
+    .cta-section {
+      background: var(--brand);
+      color: var(--white);
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 16px;
+    }
+    .cta-section h2 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+    .cta-section p  { font-size: 14px; opacity: .85; max-width: 420px; margin: 0 auto 22px; }
+    .cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .cta-btn {
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform .15s;
+    }
+    .cta-btn:active { transform: scale(.97); }
+    .cta-btn-gold { background: var(--accent); color: var(--brand); }
+    .cta-btn-outline { border: 2px solid rgba(255,255,255,.5); color: var(--white); }
+    .cta-contact-grid {
+      max-width: 500px;
+      margin: 28px auto 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      text-align: left;
+    }
+    .cta-contact-item .label { font-size: 11px; opacity: .6; text-transform: uppercase; letter-spacing: 1px; }
+    .cta-contact-item .value { font-size: 14px; font-weight: 600; }
+    .cta-contact-item a { color: var(--accent); text-decoration: none; }
+
+    /* ── Footer ── */
+    .site-footer {
+      background: var(--gray-800);
+      color: var(--gray-300);
+      text-align: center;
+      padding: 20px;
+      font-size: 12px;
+    }
+    .site-footer a { color: var(--accent); text-decoration: none; }
+
+    /* ── Modal ── */
+    .modal-overlay {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,.6);
+      z-index: 200;
+      align-items: flex-end;
+      justify-content: center;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal {
+      background: var(--white);
+      border-radius: var(--radius) var(--radius) 0 0;
+      width: 100%;
+      max-width: 480px;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 24px 20px 32px;
+      animation: slideUp .25s ease;
+    }
+    @keyframes slideUp {
+      from { transform: translateY(100%); }
+      to   { transform: translateY(0); }
+    }
+    .modal-close {
+      float: right;
+      background: var(--gray-100);
+      border: none;
+      border-radius: 50%;
+      width: 30px; height: 30px;
+      font-size: 18px;
+      cursor: pointer;
+      color: var(--gray-500);
+      line-height: 30px;
+      text-align: center;
+    }
+    .modal h3 { font-size: 18px; font-weight: 800; color: var(--brand); margin-bottom: 4px; }
+    .modal .modal-tag { font-size: 11px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
+    .modal-img {
+      width: 100%; border-radius: 8px; margin-bottom: 16px;
+      aspect-ratio: 16/9; object-fit: cover;
+    }
+    .modal-img-placeholder {
+      width: 100%; border-radius: 8px; margin-bottom: 16px;
+      aspect-ratio: 16/9;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; font-weight: 600; color: rgba(255,255,255,.8);
+      text-shadow: 0 1px 4px rgba(0,0,0,.4);
+    }
+    .modal-specs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 16px;
+      margin-bottom: 20px;
+      border-top: 1px solid var(--gray-100);
+      border-bottom: 1px solid var(--gray-100);
+      padding: 16px 0;
+    }
+    .modal-spec .label { font-size: 11px; text-transform: uppercase; letter-spacing: .8px; color: var(--gray-500); font-weight: 600; }
+    .modal-spec .value { font-size: 15px; font-weight: 700; color: var(--brand); }
+    .modal-actions { display: flex; gap: 10px; }
+    .modal-actions .btn { flex: 1; padding: 13px; font-size: 14px; }
+
+    /* ── Responsive ── */
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 20px; }
+      .product-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; padding: 4px 12px 24px; }
+      .filter-bar { padding: 12px; }
+      .section-heading { padding: 20px 12px 6px; }
+      .collection-meta { padding: 0 12px 12px; }
+      .cta-contact-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════ HEADER ════ -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo">
+      <div class="logo-mark">CW</div>
+      <div>
+        <div class="logo-text">Calwood Flooring Supply</div>
+        <div class="logo-sub">Home Depot Vendor</div>
+      </div>
+    </div>
+    <div class="header-contact">
+      <a href="tel:+1XXXXXXXXXX">Request a Quote →</a>
+    </div>
+  </div>
+</header>
+
+<!-- ════ HERO ════ -->
+<section class="hero">
+  <h1>Custom Flooring Catalog</h1>
+  <p>European & Euro White Oak — Engineered Hardwood, Stair Treads, Matching Accessories. Available through Home Depot Special Order & QuoteCenter.</p>
+  <div class="hero-badges">
+    <span class="badge">European Oak</span>
+    <span class="badge">Western European Oak</span>
+    <span class="badge">Prefinished & Unfinished</span>
+    <span class="badge">Special Order Available</span>
+    <span class="badge">Matching Accessories</span>
+  </div>
+</section>
+
+<!-- ════ COLLECTION NAV ════ -->
+<nav class="collection-nav">
+  <div class="collection-nav-inner">
+    <a class="col-tab active" href="#all"       onclick="filterCollection('all',this)">All Collections</a>
+    <a class="col-tab"        href="#supreme"   onclick="filterCollection('Supreme',this)">Supreme</a>
+    <a class="col-tab"        href="#woodline"  onclick="filterCollection('Woodline',this)">Woodline</a>
+    <a class="col-tab"        href="#via-torino" onclick="filterCollection('Via Torino',this)">Via Torino</a>
+    <a class="col-tab"        href="#icon"      onclick="filterCollection('Icon',this)">Icon</a>
+  </div>
+</nav>
+
+<!-- ════ FILTER BAR ════ -->
+<div class="filter-bar">
+  <span class="filter-label">Color family:</span>
+  <button class="filter-chip active" onclick="filterColor('all',this)">All</button>
+  <button class="filter-chip" onclick="filterColor('White',this)">White / Light</button>
+  <button class="filter-chip" onclick="filterColor('Beige',this)">Beige / Natural</button>
+  <button class="filter-chip" onclick="filterColor('Gray',this)">Gray</button>
+  <button class="filter-chip" onclick="filterColor('Brown',this)">Brown / Dark</button>
+</div>
+
+<!-- ════ PRODUCTS ════ -->
+<main id="catalog">
+
+  <!-- ── SUPREME ── -->
+  <div class="section-heading" id="supreme">
+    <h2>Supreme Collection</h2>
+    <span class="section-sub">10 colors</span>
+  </div>
+  <div class="section-divider"><hr></div>
+  <p class="collection-meta">European Oak · Prefinished Engineered · 7⅝" Wide · ¾" Thick · 3.5mm Veneer · Up to 96" Lengths · $5.49/sq.ft.</p>
+
+  <div class="product-grid">
+
+    <div class="product-card" data-collection="Supreme" data-color-family="Beige"
+         data-color="Beige" data-sku="LM2U712BEIGE" data-price="5.49"
+         data-species="European Oak" data-width='7 5/8"' data-thickness="3/4&quot;" data-veneer="3.5mm"
+         data-construction="Prefinished Engineered" data-finish="UV Oil Matte"
+         data-palazzo="Buckingham" data-lengths="Up to 96&quot;">
+      <div class="product-img-placeholder bg-beige">
+        <!-- REPLACE with: <img class="product-img" src="images/supreme-beige.jpg" alt="Beige"> -->
+        <div class="placeholder-name">Beige</div>
+        <div class="placeholder-add">Add photo →</div>
+      </div>
+      <div class="product-info">
+        <div class="product-color-name">Beige</div>
+        <div class="product-collection-tag">Supreme Collection</div>
+        <div class="product-specs">
+          <div class="spec-item"><span class="spec-label">Species</span><span class="spec-value">European Oak</span></div>
+          <div class="spec-item"><span class="spec-label">Width</span><span class="spec-value">7⅝"</span></div>
+          <div class="spec-item"><span class="spec-label">Veneer</span><span class="spec-value">3.5mm</span></div>
+          <div class="spec-item"><span class="spec-label">Finish</span><span class="spec-value">UV Oil Matte</span></div>
+        </div>
+        <div class="product-price">$5.49 <span>/ sq.ft.</span></div>
+        <div class="product-sku">SKU: LM2U712BEIGE</div>
+        <div class="product-actions">
+          <button class="btn btn-primary" onclick="openModal(this.closest('.product-card'))">View Details</button>
+          <a class="btn btn-outline" href="#contact">Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-collection="Supreme" data-color-family="White"
+         data-color="Cream" data-sku="LM2U712CREAM" data-price="5.49"
+         data-species="European Oak" data-width='7 5/8"' data-thickness="3/4&quot;" data-veneer="3.5mm"
+         data-construction="Prefinished Engineered" data-finish="Bona Natural UV"
+         data-palazzo="Cristal" data-lengths="Up to 96&quot;">
+      <div class="product-img-placeholder bg-white">
+        <div class="placeholder-name">Cream</div>
+        <div class="placeholder-add">Add photo →</div>
+      </div>
+      <div class="product-info">
+        <div class="product-color-name">Cream</div>
+        <div class="product-collection-tag">Supreme Collection</div>
+        <div class="product-specs">
+          <div class="spec-item"><span class="spec-label">Species</span><span class="spec-value">European Oak</span></div>
+          <div class="spec-item"><span class="spec-label">Width</span><span class="spec-value">7⅝"</span></div>
+          <div class="spec-item"><span class="spec-label">Veneer</span><span class="spec-value">3.5mm</span></div>
+          <div class="spec-item"><span class="spec-label">Finish</span><span class="spec-value">Bona Natural UV</span></div>
+        </div>
+        <div class="product-price">$5.49 <span>/ sq.ft.</span></div>
+        <div class="product-sku">SKU: LM2U712CREAM</div>
+        <div class="product-actions">
+          <button class="btn btn-primary" onclick="openModal(this.closest('.product-card'))">View Details</button>
+          <a class="btn btn-outline" href="#contact">Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-collection="Supreme" data-color-family="White"
+         data-color="Jade Rustic" data-sku="LM2U712REJADE" data-price="5.49"
+         data-species="European Oak" data-width='7 5/8"' data-thickness="3/4&quot;" data-veneer="3.5mm"
+         data-construction="Prefinished Engineered" data-finish="Bona Natural UV"
+         data-palazzo="Johannisburg" data-lengths="Up to 96&quot;">
+      <div class="product-img-placeholder bg-natural">
+        <div class="placeholder-name">Jade Rustic</div>
+        <div class="placeholder-add">Add photo →</div>
+      </div>
+      <div class="product-info">
+        <div class="product-color-name">Jade Rustic</div>
+        <div class="product-collection-tag">Supreme Collection</div>
+        <div class="product-specs">
+          <div class="spec-item"><span class="spec-label">Species</span><span class="spec-value">European Oak</span></div>
+          <div class="spec-item"><span class="spec-label">Width</span><span class="spec-value">7⅝"</span></div>
+          <div class="spec-item"><span class="spec-label">Veneer</span><span class="spec-value">3.5mm</span></div>
+          <div class="spec-item"><span class="spec-label">Finish</span><span class="spec-value">Bona Natural UV</span></div>
+        </div>
+        <div class="product-price">$5.49 <span>/ sq.ft.</span></div>
+        <div class="product-sku">SKU: LM2U712REJADE</div>
+        <div class="product-actions">
+          <button class="btn btn-primary" onclick="openModal(this.closest('.product-card'))">View Details</button>
+          <a class="btn btn-outline" href="#contact">Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-collection="Supreme" data-color-family="White"
+         data-color="Jubilee" data-sku="LM2U712REJEW" data-price="5.49"
+         data-species="European Oak" data-width='7 5/8"' data-thickness="3/4&quot;" data-veneer="3.5mm"
+         data-construction="Prefinished Engineered" data-finish="Bona Natural UV"
+         data-palazzo="Jubilee" data-lengths="Up to 96&quot;">
+      <div class="product-img-placeholder bg-white">
+        <div class="placeholder-name">Jubilee</div>
+        <div class="placeholder-add">Add photo →</div>
+      </div>
+      <div class="product-info">
+        <div class="product-color-name">Jubilee</div>
+        <div class="product-collection-tag">Supreme Collection</div>
+        <div class="product-specs">
+          <div class="spec-item"><span class="spec-label">Species</span><span class="spec-value">European Oak</span></div>
+          <div class="spec-item"><span class="spec-label">Width</span><span class="spec-value">7⅝"</span></div>
+          <div class="spec-item"><span class="spec-label">Veneer</span><span class="spec-value">3.5mm</span></div>
+          <div class="spec-item"><span class="spec-label">Finish</span><span class="spec-value">Bona Natural UV</span></div>
+        </div>
+        <div class="product-price">$5.49 <span>/ sq.ft.</span></div>
+        <div class="product-sku">SKU: LM2U712REJEW</div>
+        <div class="product-actions">
+          <button class="btn btn-primary" onclick="openModal(this.closest('.product-card'))">View Details</button>
+          <a class="btn btn-outline" href="#contact">Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-collection="Supreme" data-color-family="Beige"
+         data-color="Kashmire Rustic" data-sku="LM2U712REKASH" data-price="5.49"
+         data-species="European Oak" data-width='7 5/8"' data-thickness="3/4&quot;" data-veneer="3.5mm"
+         data-construction="Prefinished Engineered" data-finish="Bona Natural UV"
+         data-palazzo="Kensington" data-lengths="Up to 96&quot;">
+      <div class="product-img-placeholder bg-rustic">
+        <div class="placeholder-name">Kashmire Rustic</div>
+        <div class="placeholder-add">Add photo →</div>
+      </div>
+      <div class="product-info">
+        <div class="product-color-name">Kashmire Rustic</div>
+        <div class="product-collection-tag">Supreme Collection</div>
+        <div class="product-specs">
+          <div class="spec-item"><span class="spec-label">Species</span><span class="spec-value">European Oak</span></div>
+          <div class="spec-item"><span class="spec-label">Width</span><span class="spec-value">7⅝"</span></div>
+          <div class="spec-item"><span class="spec-label">Veneer</span><span class="spec-value">3.5mm</span></div>
+          <div class="spec-item"><span class="spec-label">Finish</span><span class="spec-value">Bona Natural UV</span></div>
+        </div>
+        <div class="product-price">$5.49 <span>/ sq.ft.</span></div>
+        <div class="product-sku">SKU: LM2U712REKASH</div>
+        <div class="product-actions">
+          <button class="btn btn-primary" onclick="openModal(this.closest('.product-card'))">View Details</button>
+          <a class="btn btn-outline" href="#contact">Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-collection="Supreme" data-color-family="White"
+         data-color="Opal Rustic" data-sku="LM2U712REOPAL" data-price="5.49"
+         data-species="European Oak" data-width='7 5/8"' data-thickness="3/4&quot;" data-veneer="3.5mm"
+         data-construction="Prefinished Engineered" data-finish="Bona Natural UV"
+         data-palazzo="Oro" data-lengths="Up to 96&quot;">
+      <div class="product-img-placeholder bg-natural">
+        <div class="placeholder-name">Opal Rustic</div>
+        <div class="placeholder-add">Add photo →</div>
+      </div>
+      <div class="product-info">
+        <div class="product-color-name">Opal Rustic</div>
+        <div class="product-collection-tag">Supreme Collection</div>
+        <div class="product-specs">
+          <div class="spec-item"><span class="spec-label">Species</span><span class="spec-value">European Oak</span></div>
+          <div class="spec-item"><span class="spec-label">Width</span><span class="spec-value">7⅝"</span></div>
+          <div class="spec-item"><span class="spec-label">Veneer</span><span class="spec-value">3.5mm</span></div>
+          <div class="spec-item"><span class="spec-label">Finish</span><span class="spec-value">Bona Natural UV</span></div>
+        </div>
+        <div class="product-price">$5.49 <span>/ sq.ft.</span></div>
+        <div class="product-sku">SKU: LM2U712REOPAL</div>
+        <div class="product-actions">
+          <button class="btn btn-primary" onclick="openModal(this.closest('.product-card'))">View Details</button>
+          <a class="btn btn-outline" href="#contact">Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-collection="Supreme" data-color-family="White"
+         data-color="Pearl Rustic" data-sku="LM2U712REPEARL" data-price="5.49"
+         data-species="European Oak" data-width='7 5/8"' data-thickness="3/4&quot;" data-veneer="3.5mm"
+         data-construction="Prefinished Engineered" data-finish="UV Oil"
+         data-palazzo="Peterhof" data-lengths="Up to 96&quot;">
+      <div class="product-img-placeholder bg-white">
+        <div class="placeholder-name">Pearl Rustic</div>
+        <div class="placeholder-add">Add photo →</div>
+      </div>
+      <div class="product-info">
+        <div class="product-color-name">Pearl Rustic</div>
+        <div class="product-collection-tag">Supreme Collection</div>
+        <div class="product-specs">
+          <div class="spec-item"><span class="spec-label">Species</span><span class="spec-value">European Oak</span></div>
+          <div class="spec-item"><span class="spec-label">Width</span><span class="spec-value">7⅝"</span></div>
+          <div class="spec-item"><span class="spec-label">Veneer</span><span class="spec-value">3.5mm</span></div>
+          <div class="spec-item"><span class="spec-label">Finish</span><span class="spec-value">UV Oil</span></div>
+        </div>
+        <div class="product-price">$5.49 <span>/ sq.ft.</span></div>
+        <div class="product-sku">SKU: LM2U712REPEARL</div>
+        <div class="product-actions">
+          <button class="btn btn-primary" onclick="openModal(this.closest('.product-card'))">View Details</button>
+          <a class="btn btn-outline" href="#contact">Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-collection="Supreme" data-color-family="Beige"
+         data-color="Cotton" data-sku="LM2U712COT" data-price="5.49"
+         data-species="European Oak" data-width='7 5/8"' data-thickness="3/4&quot;" data-veneer="3.7mm"
+         data-construction="Prefinished Engineered" data-finish="UV Oil"
+         data-palazzo="Crescent" data-lengths="Up to 84&quot;">
+      <div class="product-img-placeholder bg-beige">
+        <div class="placeholder-name">Cotton</div>
+        <div class="placeholder-add">Add photo →</div>
+      </div>
+      <div class="product-info">
+        <div class="product-color-name">Cotton</div>
+        <div class="product-collection-tag">Supreme Collection</div>
+        <div class="product-specs">
+          <div class="spec-item"><span class="spec-label">Species</span><span class="spec-value">European Oak</span></div>
+          <div class="spec-item"><span class="spec-label">Width</span><span class="spec-value">7⅝"</span></div>
+          <div class="spec-item"><span class="spec-label">Veneer</span><span class="spec-value">3.7mm</span></div>
+          <div class="spec-item"><span class="spec-label">Finish</span><span class="spec-value">UV Oil</span></div>
+        </div>
+        <div class="product-price">$5.49 <span>/ sq.ft.</span></div>
+        <div class="product-sku">SKU: LM2U712COT</div>
+        <div class="product-actions">
+          <button class="btn btn-primary" onclick="openModal(this.closest('.product-card'))">View Details</button>
+          <a class="btn btn-outline" href="#contact">Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-collection="Supreme" data-color-family="Beige"
+         data-color="Horizon" data-sku="LM2U712HOR" data-price="5.49"
+         data-species="European Oak" data-width='7 5/8"' data-thickness="3/4&quot;" data-veneer="3.7mm"
+         data-construction="Prefinished Engineered" data-finish="UV Oil"
+         data-palazzo="Hampton" data-lengths="Up to 84&quot;">
+      <div class="product-img-placeholder bg-beige">
+        <div class="placeholder-name">Horizon</div>
+        <div class="placeholder-add">Add photo →</div>
+      </div>
+      <div class="product-info">
+        <div class="product-color-name">Horizon</div>
+        <div class="product-collection-tag">Supreme Collection</div>
+        <div class="product-specs">
+          <div class="spec-item"><span class="spec-label">Species</span><span class="spec-value">European Oak</span></div>
+          <div class="spec-item"><span class="spec-label">Width</span><span class="spec-value">7⅝"</span></div>
+          <div class="spec-item"><span class="spec-label">Veneer</span><span class="spec-value">3.7mm</span></div>
+          <div class="spec-item"><span class="spec-label">Finish</span><span class="spec-value">UV Oil</span></div>
+        </div>
+        <div class="product-price">$5.49 <span>/ sq.ft.</span></div>
+        <div class="product-sku">SKU: LM2U712HOR</div>
+        <div class="product-actions">
+          <button class="btn btn-primary" onclick="openModal(this.closest('.product-card'))">View Details</button>
+          <a class="btn btn-outline" href="#contact">Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-collection="Supreme" data-color-family="Beige"
+         data-color="Andante" data-sku="LM2U712AND" data-price="5.49"
+         data-species="European Oak" data-width='7 5/8"' data-thickness="3/4&quot;" data-veneer="3.7mm"
+         data-construction="Prefinished Engineered" data-finish="Bona Natural UV"
+         data-palazzo="Aldera" data-lengths="Up to 84&quot;">
+      <div class="product-img-placeholder bg-beige">
+        <div class="placeholder-name">Andante</div>
+        <div class="placeholder-add">Add photo →</div>
+      </div>
+      <div class="product-info">
+        <div class="product-color-name">Andante</div>
+        <div class="product-collection-tag">Supreme Collection</div>
+        <div class="product-specs">
+          <div class="spec-item"><span class="spec-label">Species</span><span class="spec-value">European Oak</span></div>
+          <div class="spec-item"><span class="spec-label">Width</span><span class="spec-value">7⅝"</span></div>
+          <div class="spec-item"><span class="spec-label">Veneer</span><span class="spec-value">3.7mm</span></div>
+          <div class="spec-item"><span class="spec-label">Finish</span><span class="spec-value">Bona Natural UV</span></div>
+        </div>
+        <div class="product-price">$5.49 <span>/ sq.ft.</span></div>
+        <div class="product-sku">SKU: LM2U712AND</div>
+        <div class="product-actions">
+          <button class="btn btn-primary" onclick="openModal(this.closest('.product-card'))">View Details</button>
+          <a class="btn btn-outline" href="#contact">Quote</a>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /Supreme grid -->
+
+  <!-- ── WOODLINE ── -->
+  <div class="section-heading" id="woodline">
+    <h2>Woodline Collection</h2>
+    <span class="section-sub">17 colors</span>
+  </div>
+  <div class="section-divider"><hr></div>
+  <p class="collection-meta">Western European Oak · Wire Brushed Engineered Hardwood · 7/8" T × 7.5" W · Tongue &amp; Groove · 3-Ply Core · Variable Lengths · 20.55 sq.ft./Case ($184.74/case) · Available on HomeDepot.com — Super SKU</p>
+
+  <div class="product-grid">
+
+    <div class="product-card" data-collection="Woodline" data-color-family="Brown"
+         data-color="Spirit" data-sku="WL-SPIRIT" data-price="8.99"
+         data-species="Western European Oak" data-width='7.5"' data-thickness="7/8&quot;" data-veneer="4mm"
+         data-construction="Wire Brushed Engineered" data-finish="UV Oil / Tongue &amp; Groove"
+         data-palazzo="" data-lengths="Variable 20–84&quot;">
+      <div class="product-img-placeholder bg-natural">
+        <div class="placeholder-name">Spirit</div>
+        <div class="placeholder-add">Add photo →</div>
+      </div>
+      <div class="product-info">
+        <div class="product-color-name">Spirit</div>
+        <div class="product-collection-tag">Woodline Collection</div>
+        <div class="product-specs">
+          <div class="spec-item"><span class="spec-label">Species</span><span class="spec-value">W. Euro Oak</span></div>
+          <div class="spec-item"><span class="spec-label">Size</span><span class="spec-value">7/8" × 7.5"</span></div>
+          <div class="spec-item"><span class="spec-label">Coverage</span><span class="spec-value">20.55 sq.ft.</span></div>
+          <div class="spec-item"><span class="spec-label">Finish</span><span class="spec-value">Wire Brushed</span></div>
+        </div>
+        <div class="product-price">$8.99 <span>/ sq.ft. · $184.74/case</span></div>
+        <div class="product-sku">SKU: WL-SPIRIT</div>
+        <div class="product-actions">
+          <button class="btn btn-primary" onclick="openModal(this.closest('.product-card'))">View Details</button>
+          <a class="btn btn-outline" href="#contact">Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-collection="Woodline" data-color-family="Beige"
+         data-color="Strasbourg" data-sku="WL-STRASBOURG" data-price="8.74"
+         data-species="Western European Oak" data-width='7.5"' data-thickness="7/8&quot;" data-veneer="4mm"
+         data-construction="Wire Brushed Engineered" data-finish="UV Oil / Tongue &amp; Groove"
+         data-palazzo="" data-lengths="Variable 20–84&quot;">
+      <div class="product-img-placeholder bg-beige">
+        <div class="placeholder-name">Strasbourg</div>
+        <div class="placeholder-add">Add photo →</div>
+      </div>
+      <div class="product-info">
+        <div class="product-color-name">Strasbourg</div>
+        <div class="product-collection-tag">Woodline Collection</div>
+        <div class="product-specs">
+          <div class="spec-item"><span class="spec-label">Species</span><span class="spec-value">W. Euro Oak</span></div>
+          <div class="spec-item"><span class="spec-label">Size</span><span class="spec-value">7/8" × 7.5"</span></div>
+          <div class="spec-item"><span class="spec-label">Coverage</span><span class="spec-value">20.55 sq.ft.</span></div>
+          <div class="spec-item"><span class="spec-label">Finish</span><span class="spec-value">Wire Brushed</span></div>
+        </div>
+        <div class="product-price">$8.74 <span>/ sq.ft.</span></div>
+        <div class="product-sku">SKU: WL-STRASBOURG</div>
+        <div class="product-actions">
+          <button class="btn btn-primary" onclick="openModal(this.closest('.product-card'))">View Details</button>
+          <a class="btn btn-outline" href="#contact">Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-collection="Woodline" data-color-family="Brown"
+         data-color="Aspen" data-sku="WL-ASPEN" data-price="10.87"
+         data-species="Western European Oak" data-width='7.5"' data-thickness="7/8&quot;" data-veneer="4mm"
+         data-construction="Wire Brushed Engineered" data-finish="UV Oil / Tongue &amp; Groove"
+         data-palazzo="" data-lengths="Variable 20–84&quot;">
+      <div class="product-img-placeholder bg-brown">
+        <div class="placeholder-name">Aspen</div>
+        <div class="placeholder-add">Add photo →</div>
+      </div>
+      <div class="product-info">
+        <div class="product-color-name">Aspen</div>
+        <div class="product-collection-tag">Woodline Collection</div>
+        <div class="product-specs">
+          <div class="spec-item"><span class="spec-label">Species</span><span class="spec-value">W. Euro Oak</span></div>
+          <div class="spec-item"><span class="spec-label">Size</span><span class="spec-value">7/8" × 7.5"</span></div>
+          <div class="spec-item"><span class="spec-label">Coverage</span><span class="spec-value">20.55 sq.ft.</span></div>
+          <div class="spec-item"><span class="spec-label">Finish</span><span class="spec-value">Wire Brushed</span></div>
+        </div>
+        <div class="product-price">$10.87 <span>/ sq.ft.</span></div>
+        <div class="product-sku">SKU: WL-ASPEN</div>
+        <div class="product-actions">
+          <button class="btn btn-primary" onclick="openModal(this.closest('.product-card'))">View Details</button>
+          <a class="btn btn-outline" href="#contact">Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-collection="Woodline" data-color-family="Brown"
+         data-color="Walnut" data-sku="WL-WALNUT" data-price="11.60"
+         data-species="Western European Oak" data-width='7.5"' data-thickness="7/8&quot;" data-veneer="4mm"
+         data-construction="Wire Brushed Engineered" data-finish="UV Oil / Tongue &amp; Groove"
+         data-palazzo="" data-lengths="Variable 20–84&quot;">
+      <div class="product-img-placeholder bg-brown">
+        <div class="placeholder-name">Walnut</div>
+        <div class="placeholder-add">Add photo →</div>
+      </div>
+      <div class="product-info">
+        <div class="product-color-name">Walnut</div>
+        <div class="product-collection-tag">Woodline Collection</div>
+        <div class="product-specs">
+          <div class="spec-item"><span class="spec-label">Species</span><span class="spec-value">W. Euro Oak</span></div>
+          <div class="spec-item"><span class="spec-label">Size</span><span class="spec-value">7/8" × 7.5"</span></div>
+          <div class="spec-item"><span class="spec-label">Coverage</span><span class="spec-value">20.55 sq.ft.</span></div>
+          <div class="spec-item"><span class="spec-label">Finish</span><span class="spec-value">Wire Brushed</span></div>
+        </div>
+        <div class="product-price">$11.60 <span>/ sq.ft.</span></div>
+        <div class="product-sku">SKU: WL-WALNUT</div>
+        <div class="product-actions">
+          <button class="btn btn-primary" onclick="openModal(this.closest('.product-card'))">View Details</button>
+          <a class="btn btn-outline" href="#contact">Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-collection="Woodline" data-color-family="Beige"
+         data-color="Albatron" data-sku="WL-ALBATRON" data-price="9.97"
+         data-species="Western European Oak" data-width='7.5"' data-thickness="7/8&quot;" data-veneer="4mm"
+         data-construction="Wire Brushed Engineered" data-finish="UV Oil / Tongue &amp; Groove"
+         data-palazzo="" data-lengths="Variable 20–84&quot;">
+      <div class="product-img-placeholder bg-beige">
+        <div class="placeholder-name">Albatron</div>
+        <div class="placeholder-add">Add photo →</div>
+      </div>
+      <div class="product-info">
+        <div class="product-color-name">Albatron</div>
+        <div class="product-collection-tag">Woodline Collection</div>
+        <div class="product-specs">
+          <div class="spec-item"><span class="spec-label">Species</span><span class="spec-value">W. Euro Oak</span></div>
+          <div class="spec-item"><span class="spec-label">Size</span><span class="spec-value">7/8" × 7.5"</span></div>
+          <div class="spec-item"><span class="spec-label">Coverage</span><span class="spec-value">20.55 sq.ft.</span></div>
+          <div class="spec-item"><span class="spec-label">Finish</span><span class="spec-value">Wire Brushed</span></div>
+        </div>
+        <div class="product-price">$9.97 <span>/ sq.ft.</span></div>
+        <div class="product-sku">SKU: WL-ALBATRON</div>
+        <div class="product-actions">
+          <button class="btn btn-primary" onclick="openModal(this.closest('.product-card'))">View Details</button>
+          <a class="btn btn-outline" href="#contact">Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-collection="Woodline" data-color-family="Brown"
+         data-color="Amboseli" data-sku="WL-AMBOSELI" data-price="9.72"
+         data-species="Western European Oak" data-width='7.5"' data-thickness="7/8&quot;" data-veneer="4mm"
+         data-construction="Wire Brushed Engineered" data-finish="UV Oil / Tongue &amp; Groove"
+         data-palazzo="" data-lengths="Variable 20–84&quot;">
+      <div class="product-img-placeholder bg-rustic">
+        <div class="placeholder-name">Amboseli</div>
+        <div class="placeholder-add">Add photo →</div>
+      </div>
+      <div class="product-info">
+        <div class="product-color-name">Amboseli</div>
+        <div class="product-collection-tag">Woodline Collection</div>
+        <div class="product-specs">
+          <div class="spec-item"><span class="spec-label">Species</span><span class="spec-value">W. Euro Oak</span></div>
+          <div class="spec-item"><span class="spec-label">Size</span><span class="spec-value">7/8" × 7.5"</span></div>
+          <div class="spec-item"><span class="spec-label">Coverage</span><span class="spec-value">20.55 sq.ft.</span></div>
+          <div class="spec-item"><span class="spec-label">Finish</span><span class="spec-value">Wire Brushed</span></div>
+        </div>
+        <div class="product-price">$9.72 <span>/ sq.ft.</span></div>
+        <div class="product-sku">SKU: WL-AMBOSELI</div>
+        <div class="product-actions">
+          <button class="btn btn-primary" onclick="openModal(this.closest('.product-card'))">View Details</button>
+          <a class="btn btn-outline" href="#contact">Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-collection="Woodline" data-color-family="Beige"
+         data-color="Appalachians" data-sku="WL-APPALACHIANS" data-price="10.24"
+         data-species="Western European Oak" data-width='7.5"' data-thickness="7/8&quot;" data-veneer="4mm"
+         data-construction="Wire Brushed Engineered" data-finish="UV Oil / Tongue &amp; Groove"
+         data-palazzo="" data-lengths="Variable 20–84&quot;">
+      <div class="product-img-placeholder bg-natural">
+        <div class="placeholder-name">Appalachians</div>
+        <div class="placeholder-add">Add photo →</div>
+      </div>
+      <div class="product-info">
+        <div class="product-color-name">Appalachians</div>
+        <div class="product-collection-tag">Woodline Collection</div>
+        <div class="product-specs">
+          <div class="spec-item"><span class="spec-label">Species</span><span class="spec-value">W. Euro Oak</span></div>
+          <div class="spec-item"><span class="spec-label">Size</span><span class="spec-value">7/8" × 7.5"</span></div>
+          <div class="spec-item"><span class="spec-label">Coverage</span><span class="spec-value">20.55 sq.ft.</span></div>
+          <div class="spec-item"><span class="spec-label">Finish</span><span class="spec-value">Wire Brushed</span></div>
+        </div>
+        <div class="product-price">$10.24 <span>/ sq.ft.</span></div>
+        <div class="product-sku">SKU: WL-APPALACHIANS</div>
+        <div class="product-actions">
+          <button class="btn btn-primary" onclick="openModal(this.closest('.product-card'))">View Details</button>
+          <a class="btn btn-outline" href="#contact">Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-collection="Woodline" data-color-family="Gray"
+         data-color="Ozark" data-sku="WL-OZARK" data-price="9.49"
+         data-species="Western European Oak" data-width='7.5"' data-thickness="7/8&quot;" data-veneer="4mm"
+         data-construction="Wire Brushed Engineered" data-finish="UV Oil / Tongue &amp; Groove"
+         data-palazzo="" data-lengths="Variable 20–84&quot;">
+      <div class="product-img-placeholder bg-gray">
+        <div class="placeholder-name">Ozark</div>
+        <div class="placeholder-add">Add photo →</div>
+      </div>
+      <div class="product-info">
+        <div class="product-color-name">Ozark</div>
+        <div class="product-collection-tag">Woodline Collection</div>
+        <div class="product-specs">
+          <div class="spec-item"><span class="spec-label">Species</span><span class="spec-value">W. Euro Oak</span></div>
+          <div class="spec-item"><span class="spec-label">Size</span><span class="spec-value">7/8" × 7.5"</span></div>
+          <div class="spec-item"><span class="spec-label">Coverage</span><span class="spec-value">20.55 sq.ft.</span></div>
+          <div class="spec-item"><span class="spec-label">Finish</span><span class="spec-value">Wire Brushed</span></div>
+        </div>
+        <div class="product-price">$9.49 <span>/ sq.ft.</span></div>
+        <div class="product-sku">SKU: WL-OZARK</div>
+        <div class="product-actions">
+          <button class="btn btn-primary" onclick="openModal(this.closest('.product-card'))">View Details</button>
+          <a class="btn btn-outline" href="#contact">Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-collection="Woodline" data-color-family="Brown"
+         data-color="Apennines" data-sku="WL-APENNINES" data-price="9.72"
+         data-species="Western European Oak" data-width='7.5"' data-thickness="7/8&quot;" data-veneer="4mm"
+         data-construction="Wire Brushed Engineered" data-finish="UV Oil / Tongue &amp; Groove"
+         data-palazzo="" data-lengths="Variable 20–84&quot;">
+      <div class="product-img-placeholder bg-rustic">
+        <div class="placeholder-name">Apennines</div>
+        <div class="placeholder-add">Add photo →</div>
+      </div>
+      <div class="product-info">
+        <div class="product-color-name">Apennines</div>
+        <div class="product-collection-tag">Woodline Collection</div>
+        <div class="product-specs">
+          <div class="spec-item"><span class="spec-label">Species</span><span class="spec-value">W. Euro Oak</span></div>
+          <div class="spec-item"><span class="spec-label">Size</span><span class="spec-value">7/8" × 7.5"</span></div>
+          <div class="spec-item"><span class="spec-label">Coverage</span><span class="spec-value">20.55 sq.ft.</span></div>
+          <div class="spec-item"><span class="spec-label">Finish</span><span class="spec-value">Wire Brushed</span></div>
+        </div>
+        <div class="product-price">$9.72 <span>/ sq.ft.</span></div>
+        <div class="product-sku">SKU: WL-APENNINES</div>
+        <div class="product-actions">
+          <button class="btn btn-primary" onclick="openModal(this.closest('.product-card'))">View Details</button>
+          <a class="btn btn-outline" href="#contact">Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-collection="Woodline" data-color-family="Brown"
+         data-color="Asisi" data-sku="WL-ASISI" data-price="10.98"
+         data-species="Western European Oak" data-width='7.5"' data-thickness="7/8&quot;" data-veneer="4mm"
+         data-construction="Wire Brushed Engineered" data-finish="UV Oil / Tongue &amp; Groove"
+         data-palazzo="" data-lengths="Variable 20–84&quot;">
+      <div class="product-img-placeholder bg-brown">
+        <div class="placeholder-name">Asisi</div>
+        <div class="placeholder-add">Add photo →</div>
+      </div>
+      <div class="product-info">
+        <div class="product-color-name">Asisi</div>
+        <div class="product-collection-tag">Woodline Collection</div>
+        <div class="product-specs">
+          <div class="spec-item"><span class="spec-label">Species</span><span class="spec-value">W. Euro Oak</span></div>
+          <div class="spec-item"><span class="spec-label">Size</span><span class="spec-value">7/8" × 7.5"</span></div>
+          <div class="spec-item"><span class="spec-label">Coverage</span><span class="spec-value">20.55 sq.ft.</span></div>
+          <div class="spec-item"><span class="spec-label">Finish</span><span class="spec-value">Wire Brushed</span></div>
+        </div>
+        <div class="product-price">$10.98 <span>/ sq.ft.</span></div>
+        <div class="product-sku">SKU: WL-ASISI</div>
+        <div class="product-actions">
+          <button class="btn btn-primary" onclick="openModal(this.closest('.product-card'))">View Details</button>
+          <a class="btn btn-outline" href="#contact">Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-collection="Woodline" data-color-family="Beige"
+         data-color="Cotopaxi" data-sku="WL-COTOPAXI" data-price="9.96"
+         data-species="Western European Oak" data-width='7.5"' data-thickness="7/8&quot;" data-veneer="4mm"
+         data-construction="Wire Brushed Engineered" data-finish="UV Oil / Tongue &amp; Groove"
+         data-palazzo="" data-lengths="Variable 20–84&quot;">
+      <div class="product-img-placeholder bg-natural">
+        <div class="placeholder-name">Cotopaxi</div>
+        <div class="placeholder-add">Add photo →</div>
+      </div>
+      <div class="product-info">
+        <div class="product-color-name">Cotopaxi</div>
+        <div class="product-collection-tag">Woodline Collection</div>
+        <div class="product-specs">
+          <div class="spec-item"><span class="spec-label">Species</span><span class="spec-value">W. Euro Oak</span></div>
+          <div class="spec-item"><span class="spec-label">Size</span><span class="spec-value">7/8" × 7.5"</span></div>
+          <div class="spec-item"><span class="spec-label">Coverage</span><span class="spec-value">20.55 sq.ft.</span></div>
+          <div class="spec-item"><span class="spec-label">Finish</span><span class="spec-value">Wire Brushed</span></div>
+        </div>
+        <div class="product-price">$9.96 <span>/ sq.ft.</span></div>
+        <div class="product-sku">SKU: WL-COTOPAXI</div>
+        <div class="product-actions">
+          <button class="btn btn-primary" onclick="openModal(this.closest('.product-card'))">View Details</button>
+          <a class="btn btn-outline" href="#contact">Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-collection="Woodline" data-color-family="Beige"
+         data-color="Formentera" data-sku="WL-FORMENTERA" data-price="10.06"
+         data-species="Western European Oak" data-width='7.5"' data-thickness="7/8&quot;" data-veneer="4mm"
+         data-construction="Wire Brushed Engineered" data-finish="UV Oil / Tongue &amp; Groove"
+         data-palazzo="" data-lengths="Variable 20–84&quot;">
+      <div class="product-img-placeholder bg-beige">
+        <div class="placeholder-name">Formentera</div>
+        <div class="placeholder-add">Add photo →</div>
+      </div>
+      <div class="product-info">
+        <div class="product-color-name">Formentera</div>
+        <div class="product-collection-tag">Woodline Collection</div>
+        <div class="product-specs">
+          <div class="spec-item"><span class="spec-label">Species</span><span class="spec-value">W. Euro Oak</span></div>
+          <div class="spec-item"><span class="spec-label">Size</span><span class="spec-value">7/8" × 7.5"</span></div>
+          <div class="spec-item"><span class="spec-label">Coverage</span><span class="spec-value">20.55 sq.ft.</span></div>
+          <div class="spec-item"><span class="spec-label">Finish</span><span class="spec-value">Wire Brushed</span></div>
+        </div>
+        <div class="product-price">$10.06 <span>/ sq.ft.</span></div>
+        <div class="product-sku">SKU: WL-FORMENTERA</div>
+        <div class="product-actions">
+          <button class="btn btn-primary" onclick="openModal(this.closest('.product-card'))">View Details</button>
+          <a class="btn btn-outline" href="#contact">Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-collection="Woodline" data-color-family="Beige"
+         data-color="Montblanc" data-sku="WL-MONTBLANC" data-price="9.89"
+         data-species="Western European Oak" data-width='7.5"' data-thickness="7/8&quot;" data-veneer="4mm"
+         data-construction="Wire Brushed Engineered" data-finish="UV Oil / Tongue &amp; Groove"
+         data-palazzo="" data-lengths="Variable 20–84&quot;">
+      <div class="product-img-placeholder bg-natural">
+        <div class="placeholder-name">Montblanc</div>
+        <div class="placeholder-add">Add photo →</div>
+      </div>
+      <div class="product-info">
+        <div class="product-color-name">Montblanc</div>
+        <div class="product-collection-tag">Woodline Collection</div>
+        <div class="product-specs">
+          <div class="spec-item"><span class="spec-label">Species</span><span class="spec-value">W. Euro Oak</span></div>
+          <div class="spec-item"><span class="spec-label">Size</span><span class="spec-value">7/8" × 7.5"</span></div>
+          <div class="spec-item"><span class="spec-label">Coverage</span><span class="spec-value">20.55 sq.ft.</span></div>
+          <div class="spec-item"><span class="spec-label">Finish</span><span class="spec-value">Wire Brushed</span></div>
+        </div>
+        <div class="product-price">$9.89 <span>/ sq.ft.</span></div>
+        <div class="product-sku">SKU: WL-MONTBLANC</div>
+        <div class="product-actions">
+          <button class="btn btn-primary" onclick="openModal(this.closest('.product-card'))">View Details</button>
+          <a class="btn btn-outline" href="#contact">Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-collection="Woodline" data-color-family="Beige"
+         data-color="Paramount" data-sku="WL-PARAMOUNT" data-price="9.49"
+         data-species="Western European Oak" data-width='7.5"' data-thickness="7/8&quot;" data-veneer="4mm"
+         data-construction="Wire Brushed Engineered" data-finish="UV Oil / Tongue &amp; Groove"
+         data-palazzo="" data-lengths="Variable 20–84&quot;">
+      <div class="product-img-placeholder bg-beige">
+        <div class="placeholder-name">Paramount</div>
+        <div class="placeholder-add">Add photo →</div>
+      </div>
+      <div class="product-info">
+        <div class="product-color-name">Paramount</div>
+        <div class="product-collection-tag">Woodline Collection</div>
+        <div class="product-specs">
+          <div class="spec-item"><span class="spec-label">Species</span><span class="spec-value">W. Euro Oak</span></div>
+          <div class="spec-item"><span class="spec-label">Size</span><span class="spec-value">7/8" × 7.5"</span></div>
+          <div class="spec-item"><span class="spec-label">Coverage</span><span class="spec-value">20.55 sq.ft.</span></div>
+          <div class="spec-item"><span class="spec-label">Finish</span><span class="spec-value">Wire Brushed</span></div>
+        </div>
+        <div class="product-price">$9.49 <span>/ sq.ft.</span></div>
+        <div class="product-sku">SKU: WL-PARAMOUNT</div>
+        <div class="product-actions">
+          <button class="btn btn-primary" onclick="openModal(this.closest('.product-card'))">View Details</button>
+          <a class="btn btn-outline" href="#contact">Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-collection="Woodline" data-color-family="Brown"
+         data-color="Rustic Polos" data-sku="WL-RUSTIC-POLOS" data-price="9.87"
+         data-species="Western European Oak" data-width='7.5"' data-thickness="7/8&quot;" data-veneer="4mm"
+         data-construction="Wire Brushed Engineered" data-finish="UV Oil / Tongue &amp; Groove"
+         data-palazzo="" data-lengths="Variable 20–84&quot;">
+      <div class="product-img-placeholder bg-rustic">
+        <div class="placeholder-name">Rustic Polos</div>
+        <div class="placeholder-add">Add photo →</div>
+      </div>
+      <div class="product-info">
+        <div class="product-color-name">Rustic Polos</div>
+        <div class="product-collection-tag">Woodline Collection</div>
+        <div class="product-specs">
+          <div class="spec-item"><span class="spec-label">Species</span><span class="spec-value">W. Euro Oak</span></div>
+          <div class="spec-item"><span class="spec-label">Size</span><span class="spec-value">7/8" × 7.5"</span></div>
+          <div class="spec-item"><span class="spec-label">Coverage</span><span class="spec-value">20.55 sq.ft.</span></div>
+          <div class="spec-item"><span class="spec-label">Finish</span><span class="spec-value">Wire Brushed</span></div>
+        </div>
+        <div class="product-price">$9.87 <span>/ sq.ft.</span></div>
+        <div class="product-sku">SKU: WL-RUSTIC-POLOS</div>
+        <div class="product-actions">
+          <button class="btn btn-primary" onclick="openModal(this.closest('.product-card'))">View Details</button>
+          <a class="btn btn-outline" href="#contact">Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-collection="Woodline" data-color-family="Gray"
+         data-color="Smoked Polos" data-sku="WL-SMOKED-POLOS" data-price="9.72"
+         data-species="Western European Oak" data-width='7.5"' data-thickness="7/8&quot;" data-veneer="4mm"
+         data-construction="Wire Brushed Engineered" data-finish="UV Oil / Tongue &amp; Groove"
+         data-palazzo="" data-lengths="Variable 20–84&quot;">
+      <div class="product-img-placeholder bg-gray">
+        <div class="placeholder-name">Smoked Polos</div>
+        <div class="placeholder-add">Add photo →</div>
+      </div>
+      <div class="product-info">
+        <div class="product-color-name">Smoked Polos</div>
+        <div class="product-collection-tag">Woodline Collection</div>
+        <div class="product-specs">
+          <div class="spec-item"><span class="spec-label">Species</span><span class="spec-value">W. Euro Oak</span></div>
+          <div class="spec-item"><span class="spec-label">Size</span><span class="spec-value">7/8" × 7.5"</span></div>
+          <div class="spec-item"><span class="spec-label">Coverage</span><span class="spec-value">20.55 sq.ft.</span></div>
+          <div class="spec-item"><span class="spec-label">Finish</span><span class="spec-value">Wire Brushed</span></div>
+        </div>
+        <div class="product-price">$9.72 <span>/ sq.ft.</span></div>
+        <div class="product-sku">SKU: WL-SMOKED-POLOS</div>
+        <div class="product-actions">
+          <button class="btn btn-primary" onclick="openModal(this.closest('.product-card'))">View Details</button>
+          <a class="btn btn-outline" href="#contact">Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-collection="Woodline" data-color-family="Brown"
+         data-color="U Brush" data-sku="WL-UBRUSH" data-price="11.21"
+         data-species="Western European Oak" data-width='7.5"' data-thickness="7/8&quot;" data-veneer="4mm"
+         data-construction="Wire Brushed Engineered" data-finish="UV Oil / Tongue &amp; Groove"
+         data-palazzo="" data-lengths="Variable 20–84&quot;">
+      <div class="product-img-placeholder bg-brown">
+        <div class="placeholder-name">U Brush</div>
+        <div class="placeholder-add">Add photo →</div>
+      </div>
+      <div class="product-info">
+        <div class="product-color-name">U Brush</div>
+        <div class="product-collection-tag">Woodline Collection</div>
+        <div class="product-specs">
+          <div class="spec-item"><span class="spec-label">Species</span><span class="spec-value">W. Euro Oak</span></div>
+          <div class="spec-item"><span class="spec-label">Size</span><span class="spec-value">7/8" × 7.5"</span></div>
+          <div class="spec-item"><span class="spec-label">Coverage</span><span class="spec-value">20.55 sq.ft.</span></div>
+          <div class="spec-item"><span class="spec-label">Finish</span><span class="spec-value">Wire Brushed</span></div>
+        </div>
+        <div class="product-price">$11.21 <span>/ sq.ft.</span></div>
+        <div class="product-sku">SKU: WL-UBRUSH</div>
+        <div class="product-actions">
+          <button class="btn btn-primary" onclick="openModal(this.closest('.product-card'))">View Details</button>
+          <a class="btn btn-outline" href="#contact">Quote</a>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /Woodline grid -->
+
+  <!-- ── VIA TORINO ── -->
+  <div class="section-heading" id="via-torino">
+    <h2>Via Torino Collection</h2>
+    <span class="section-sub">10 colors</span>
+  </div>
+  <div class="section-divider"><hr></div>
+  <p class="collection-meta">Euro Oak · Prefinished &amp; Unfinished Engineered · 7½" Wide · ¾" Thick · 6mm Veneer · Variable Lengths 24–120" · $9.49–$10.24/sq.ft. · 24.61 sq.ft./case</p>
+
+  <div class="product-grid">
+
+    <div class="product-card" data-collection="Via Torino" data-color-family="White"
+         data-color="Adirondaks" data-sku="LMVT712AD.WF" data-price="10.06"
+         data-species="Euro Oak" data-width='7 1/2"' data-thickness="3/4&quot;" data-veneer="6mm"
+         data-construction="Prefinished Engineered" data-finish="Bona Natural UV"
+         data-palazzo="" data-lengths="24–118&quot;">
+      <div class="product-img-placeholder bg-white">
+        <div class="placeholder-name">Adirondaks</div>
+        <div class="placeholder-add">Add photo →</div>
+      </div>
+      <div class="product-info">
+        <div class="product-color-name">Adirondaks</div>
+        <div class="product-collection-tag">Via Torino Collection</div>
+        <div class="product-specs">
+          <div class="spec-item"><span class="spec-label">Species</span><span class="spec-value">Euro Oak</span></div>
+          <div class="spec-item"><span class="spec-label">Width</span><span class="spec-value">7½"</span></div>
+          <div class="spec-item"><span class="spec-label">Veneer</span><span class="spec-value">6mm</span></div>
+          <div class="spec-item"><span class="spec-label">Finish</span><span class="spec-value">Bona Natural UV</span></div>
+        </div>
+        <div class="product-price">$10.06 <span>/ sq.ft.</span></div>
+        <div class="product-sku">SKU: LMVT712AD.WF</div>
+        <div class="product-actions">
+          <button class="btn btn-primary" onclick="openModal(this.closest('.product-card'))">View Details</button>
+          <a class="btn btn-outline" href="#contact">Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-collection="Via Torino" data-color-family="Gray"
+         data-color="Charcoal" data-sku="LMVT712CHAR" data-price="10.06"
+         data-species="Euro Oak" data-width='7 1/2"' data-thickness="3/4&quot;" data-veneer="6mm"
+         data-construction="Prefinished Engineered" data-finish="Bona Natural UV"
+         data-palazzo="" data-lengths="24–118&quot;">
+      <div class="product-img-placeholder bg-gray">
+        <div class="placeholder-name">Charcoal</div>
+        <div class="placeholder-add">Add photo →</div>
+      </div>
+      <div class="product-info">
+        <div class="product-color-name">Charcoal</div>
+        <div class="product-collection-tag">Via Torino Collection</div>
+        <div class="product-specs">
+          <div class="spec-item"><span class="spec-label">Species</span><span class="spec-value">Euro Oak</span></div>
+          <div class="spec-item"><span class="spec-label">Width</span><span class="spec-value">7½"</span></div>
+          <div class="spec-item"><span class="spec-label">Veneer</span><span class="spec-value">6mm</span></div>
+          <div class="spec-item"><span class="spec-label">Finish</span><span class="spec-value">Bona Natural UV</span></div>
+        </div>
+        <div class="product-price">$10.06 <span>/ sq.ft.</span></div>
+        <div class="product-sku">SKU: LMVT712CHAR</div>
+        <div class="product-actions">
+          <button class="btn btn-primary" onclick="openModal(this.closest('.product-card'))">View Details</button>
+          <a class="btn btn-outline" href="#contact">Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-collection="Via Torino" data-color-family="Gray"
+         data-color="Grey Mountain" data-sku="LMVT712LRGM" data-price="10.06"
+         data-species="Euro Oak" data-width='7 1/2"' data-thickness="3/4&quot;" data-veneer="6mm"
+         data-construction="Prefinished Engineered" data-finish="Bona Natural UV"
+         data-palazzo="" data-lengths="24–118&quot;">
+      <div class="product-img-placeholder bg-gray">
+        <div class="placeholder-name">Grey Mountain</div>
+        <div class="placeholder-add">Add photo →</div>
+      </div>
+      <div class="product-info">
+        <div class="product-color-name">Grey Mountain</div>
+        <div class="product-collection-tag">Via Torino Collection</div>
+        <div class="product-specs">
+          <div class="spec-item"><span class="spec-label">Species</span><span class="spec-value">Euro Oak</span></div>
+          <div class="spec-item"><span class="spec-label">Width</span><span class="spec-value">7½"</span></div>
+          <div class="spec-item"><span class="spec-label">Veneer</span><span class="spec-value">6mm</span></div>
+          <div class="spec-item"><span class="spec-label">Finish</span><span class="spec-value">Bona Natural UV</span></div>
+        </div>
+        <div class="product-price">$10.06 <span>/ sq.ft.</span></div>
+        <div class="product-sku">SKU: LMVT712LRGM</div>
+        <div class="product-actions">
+          <button class="btn btn-primary" onclick="openModal(this.closest('.product-card'))">View Details</button>
+          <a class="btn btn-outline" href="#contact">Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-collection="Via Torino" data-color-family="Gray"
+         data-color="Granite" data-sku="LMVT712LRGRA" data-price="9.49"
+         data-species="Euro Oak" data-width='7 1/2"' data-thickness="3/4&quot;" data-veneer="6mm"
+         data-construction="Prefinished Engineered" data-finish="Bona Natural UV"
+         data-palazzo="" data-lengths="24–118&quot;">
+      <div class="product-img-placeholder bg-gray">
+        <div class="placeholder-name">Granite</div>
+        <div class="placeholder-add">Add photo →</div>
+      </div>
+      <div class="product-info">
+        <div class="product-color-name">Granite</div>
+        <div class="product-collection-tag">Via Torino Collection</div>
+        <div class="product-specs">
+          <div class="spec-item"><span class="spec-label">Species</span><span class="spec-value">Euro Oak</span></div>
+          <div class="spec-item"><span class="spec-label">Width</span><span class="spec-value">7½"</span></div>
+          <div class="spec-item"><span class="spec-label">Veneer</span><span class="spec-value">6mm</span></div>
+          <div class="spec-item"><span class="spec-label">Finish</span><span class="spec-value">Bona Natural UV</span></div>
+        </div>
+        <div class="product-price">$9.49 <span>/ sq.ft.</span></div>
+        <div class="product-sku">SKU: LMVT712LRGRA</div>
+        <div class="product-actions">
+          <button class="btn btn-primary" onclick="openModal(this.closest('.product-card'))">View Details</button>
+          <a class="btn btn-outline" href="#contact">Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-collection="Via Torino" data-color-family="Gray"
+         data-color="Lava" data-sku="LMVT712LRLAV" data-price="10.06"
+         data-species="Euro Oak" data-width='7 1/2"' data-thickness="3/4&quot;" data-veneer="6mm"
+         data-construction="Prefinished Engineered" data-finish="Bona Natural UV"
+         data-palazzo="" data-lengths="24–118&quot;">
+      <div class="product-img-placeholder bg-gray">
+        <div class="placeholder-name">Lava</div>
+        <div class="placeholder-add">Add photo →</div>
+      </div>
+      <div class="product-info">
+        <div class="product-color-name">Lava</div>
+        <div class="product-collection-tag">Via Torino Collection</div>
+        <div class="product-specs">
+          <div class="spec-item"><span class="spec-label">Species</span><span class="spec-value">Euro Oak</span></div>
+          <div class="spec-item"><span class="spec-label">Width</span><span class="spec-value">7½"</span></div>
+          <div class="spec-item"><span class="spec-label">Veneer</span><span class="spec-value">6mm</span></div>
+          <div class="spec-item"><span class="spec-label">Finish</span><span class="spec-value">Bona Natural UV</span></div>
+        </div>
+        <div class="product-price">$10.06 <span>/ sq.ft.</span></div>
+        <div class="product-sku">SKU: LMVT712LRLAV</div>
+        <div class="product-actions">
+          <button class="btn btn-primary" onclick="openModal(this.closest('.product-card'))">View Details</button>
+          <a class="btn btn-outline" href="#contact">Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-collection="Via Torino" data-color-family="Gray"
+         data-color="Slate" data-sku="LMVT712LRSLA" data-price="9.49"
+         data-species="Euro Oak" data-width='7 1/2"' data-thickness="3/4&quot;" data-veneer="6mm"
+         data-construction="Prefinished Engineered" data-finish="Bona Natural UV"
+         data-palazzo="" data-lengths="24–118&quot;">
+      <div class="product-img-placeholder bg-gray">
+        <div class="placeholder-name">Slate</div>
+        <div class="placeholder-add">Add photo →</div>
+      </div>
+      <div class="product-info">
+        <div class="product-color-name">Slate</div>
+        <div class="product-collection-tag">Via Torino Collection</div>
+        <div class="product-specs">
+          <div class="spec-item"><span class="spec-label">Species</span><span class="spec-value">Euro Oak</span></div>
+          <div class="spec-item"><span class="spec-label">Width</span><span class="spec-value">7½"</span></div>
+          <div class="spec-item"><span class="spec-label">Veneer</span><span class="spec-value">6mm</span></div>
+          <div class="spec-item"><span class="spec-label">Finish</span><span class="spec-value">Bona Natural UV</span></div>
+        </div>
+        <div class="product-price">$9.49 <span>/ sq.ft.</span></div>
+        <div class="product-sku">SKU: LMVT712LRSLA</div>
+        <div class="product-actions">
+          <button class="btn btn-primary" onclick="openModal(this.closest('.product-card'))">View Details</button>
+          <a class="btn btn-outline" href="#contact">Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-collection="Via Torino" data-color-family="White"
+         data-color="Snow" data-sku="LMVT712SNOW" data-price="9.49"
+         data-species="Euro Oak" data-width='7 1/2"' data-thickness="3/4&quot;" data-veneer="6mm"
+         data-construction="Prefinished Engineered" data-finish="Bona Natural UV"
+         data-palazzo="" data-lengths="24–118&quot;">
+      <div class="product-img-placeholder bg-white">
+        <div class="placeholder-name">Snow</div>
+        <div class="placeholder-add">Add photo →</div>
+      </div>
+      <div class="product-info">
+        <div class="product-color-name">Snow</div>
+        <div class="product-collection-tag">Via Torino Collection</div>
+        <div class="product-specs">
+          <div class="spec-item"><span class="spec-label">Species</span><span class="spec-value">Euro Oak</span></div>
+          <div class="spec-item"><span class="spec-label">Width</span><span class="spec-value">7½"</span></div>
+          <div class="spec-item"><span class="spec-label">Veneer</span><span class="spec-value">6mm</span></div>
+          <div class="spec-item"><span class="spec-label">Finish</span><span class="spec-value">Bona Natural UV</span></div>
+        </div>
+        <div class="product-price">$9.49 <span>/ sq.ft.</span></div>
+        <div class="product-sku">SKU: LMVT712SNOW</div>
+        <div class="product-actions">
+          <button class="btn btn-primary" onclick="openModal(this.closest('.product-card'))">View Details</button>
+          <a class="btn btn-outline" href="#contact">Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-collection="Via Torino" data-color-family="Brown"
+         data-color="Walnut" data-sku="LMVT712WAL" data-price="9.49"
+         data-species="Euro Oak" data-width='7 1/2"' data-thickness="3/4&quot;" data-veneer="6mm"
+         data-construction="Prefinished Engineered" data-finish="Bona Natural UV"
+         data-palazzo="" data-lengths="24–118&quot;">
+      <div class="product-img-placeholder bg-brown">
+        <div class="placeholder-name">Walnut</div>
+        <div class="placeholder-add">Add photo →</div>
+      </div>
+      <div class="product-info">
+        <div class="product-color-name">Walnut</div>
+        <div class="product-collection-tag">Via Torino Collection</div>
+        <div class="product-specs">
+          <div class="spec-item"><span class="spec-label">Species</span><span class="spec-value">Euro Oak</span></div>
+          <div class="spec-item"><span class="spec-label">Width</span><span class="spec-value">7½"</span></div>
+          <div class="spec-item"><span class="spec-label">Veneer</span><span class="spec-value">6mm</span></div>
+          <div class="spec-item"><span class="spec-label">Finish</span><span class="spec-value">Bona Natural UV</span></div>
+        </div>
+        <div class="product-price">$9.49 <span>/ sq.ft.</span></div>
+        <div class="product-sku">SKU: LMVT712WAL</div>
+        <div class="product-actions">
+          <button class="btn btn-primary" onclick="openModal(this.closest('.product-card'))">View Details</button>
+          <a class="btn btn-outline" href="#contact">Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-collection="Via Torino" data-color-family="White"
+         data-color="Prima (Unfinished)" data-sku="LMSNF712PRIMWO" data-price="10.24"
+         data-species="Euro Oak" data-width='7 1/2"' data-thickness="3/4&quot;" data-veneer="6mm"
+         data-construction="Unfinished Engineered" data-finish="Unfinished"
+         data-palazzo="" data-lengths="24–96&quot;">
+      <div class="product-img-placeholder bg-unfinished">
+        <div class="placeholder-name">Prima — Unfinished</div>
+        <div class="placeholder-add">Add photo →</div>
+      </div>
+      <div class="product-info">
+        <div class="product-color-name">Prima (Unfinished)</div>
+        <div class="product-collection-tag">Via Torino Collection</div>
+        <div class="product-specs">
+          <div class="spec-item"><span class="spec-label">Species</span><span class="spec-value">Euro Oak</span></div>
+          <div class="spec-item"><span class="spec-label">Width</span><span class="spec-value">7½"</span></div>
+          <div class="spec-item"><span class="spec-label">Veneer</span><span class="spec-value">6mm</span></div>
+          <div class="spec-item"><span class="spec-label">Finish</span><span class="spec-value">Unfinished</span></div>
+        </div>
+        <div class="product-price">$10.24 <span>/ sq.ft.</span></div>
+        <div class="product-sku">SKU: LMSNF712PRIMWO</div>
+        <div class="product-actions">
+          <button class="btn btn-primary" onclick="openModal(this.closest('.product-card'))">View Details</button>
+          <a class="btn btn-outline" href="#contact">Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-collection="Via Torino" data-color-family="Beige"
+         data-color="Light Rustic (Unfinished)" data-sku="LMVT3475LRWO" data-price="9.78"
+         data-species="Euro White Oak" data-width='7 1/2"' data-thickness="3/4&quot;" data-veneer="6mm"
+         data-construction="Unfinished Engineered" data-finish="Unfinished"
+         data-palazzo="" data-lengths="24–120&quot;">
+      <div class="product-img-placeholder bg-unfinished">
+        <div class="placeholder-name">Light Rustic — Unfinished</div>
+        <div class="placeholder-add">Add photo →</div>
+      </div>
+      <div class="product-info">
+        <div class="product-color-name">Light Rustic (Unfinished)</div>
+        <div class="product-collection-tag">Via Torino Collection</div>
+        <div class="product-specs">
+          <div class="spec-item"><span class="spec-label">Species</span><span class="spec-value">Euro White Oak</span></div>
+          <div class="spec-item"><span class="spec-label">Width</span><span class="spec-value">7½"</span></div>
+          <div class="spec-item"><span class="spec-label">Veneer</span><span class="spec-value">6mm</span></div>
+          <div class="spec-item"><span class="spec-label">Finish</span><span class="spec-value">Unfinished</span></div>
+        </div>
+        <div class="product-price">$9.78 <span>/ sq.ft.</span></div>
+        <div class="product-sku">SKU: LMVT3475LRWO</div>
+        <div class="product-actions">
+          <button class="btn btn-primary" onclick="openModal(this.closest('.product-card'))">View Details</button>
+          <a class="btn btn-outline" href="#contact">Quote</a>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /Via Torino grid -->
+
+</main><!-- /catalog -->
+
+<!-- ════ CTA / CONTACT ════ -->
+<section class="cta-section" id="contact">
+  <h2>Ready to Order or Get a Quote?</h2>
+  <p>All products available through Home Depot Special Order, QuoteCenter, and Pro Desk. Matching stair treads, moldings, and accessories available.</p>
+  <div class="cta-buttons">
+    <a class="cta-btn cta-btn-gold" href="mailto:YOUREMAIL@calwoodflooring.com">Email Us for a Quote</a>
+    <a class="cta-btn cta-btn-outline" href="tel:+1XXXXXXXXXX">Call Calwood</a>
+  </div>
+  <div class="cta-contact-grid">
+    <div class="cta-contact-item">
+      <div class="label">Phone</div>
+      <div class="value"><a href="tel:+1XXXXXXXXXX">(XXX) XXX-XXXX</a></div>
+    </div>
+    <div class="cta-contact-item">
+      <div class="label">Email</div>
+      <div class="value"><a href="mailto:YOUREMAIL@calwoodflooring.com">YOUREMAIL@calwoodflooring.com</a></div>
+    </div>
+    <div class="cta-contact-item">
+      <div class="label">Available through</div>
+      <div class="value">Home Depot Special Order &amp; QuoteCenter</div>
+    </div>
+    <div class="cta-contact-item">
+      <div class="label">Matching accessories</div>
+      <div class="value">Stair treads, moldings, vents &amp; more</div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <p>© 2026 Calwood Flooring Supply · Home Depot Vendor · All products available via Special Order &amp; QuoteCenter</p>
+</footer>
+
+<!-- ════ PRODUCT DETAIL MODAL ════ -->
+<div class="modal-overlay" id="modal" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <div id="modal-tag" class="modal-tag"></div>
+    <h3 id="modal-color"></h3>
+    <div id="modal-img-wrap"></div>
+    <div class="modal-specs-grid" id="modal-specs"></div>
+    <div class="modal-actions">
+      <a id="modal-quote-btn" href="#contact" class="btn btn-primary" onclick="closeModal()">Request Quote</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  /* ── Collection filter ── */
+  let activeCollection = 'all';
+  let activeColor      = 'all';
+
+  function filterCollection(col, el) {
+    activeCollection = col;
+    document.querySelectorAll('.col-tab').forEach(t => t.classList.remove('active'));
+    el.classList.add('active');
+    applyFilters();
+    event.preventDefault();
+  }
+
+  function filterColor(col, el) {
+    activeColor = col;
+    document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+    el.classList.add('active');
+    applyFilters();
+  }
+
+  function applyFilters() {
+    document.querySelectorAll('.product-card').forEach(card => {
+      const matchCol   = activeCollection === 'all' || card.dataset.collection === activeCollection;
+      const matchColor = activeColor === 'all'      || card.dataset.colorFamily === activeColor;
+      card.classList.toggle('hidden', !(matchCol && matchColor));
+    });
+  }
+
+  /* ── Modal ── */
+  function openModal(card) {
+    const d = card.dataset;
+    document.getElementById('modal-tag').textContent   = d.collection + ' Collection';
+    document.getElementById('modal-color').textContent = d.color;
+
+    // Image or placeholder
+    const imgWrap = document.getElementById('modal-img-wrap');
+    const existingImg = card.querySelector('img.product-img');
+    if (existingImg) {
+      imgWrap.innerHTML = `<img class="modal-img" src="${existingImg.src}" alt="${d.color}">`;
+    } else {
+      const ph = card.querySelector('.product-img-placeholder');
+      imgWrap.innerHTML = `<div class="modal-img-placeholder ${[...ph.classList].filter(c=>c.startsWith('bg-')).join(' ')}" style="border-radius:8px;margin-bottom:16px;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;color:rgba(255,255,255,.85);text-shadow:0 1px 6px rgba(0,0,0,.4)">${d.color}</div>`;
+    }
+
+    const specs = [
+      { label: 'Species',       value: d.species       },
+      { label: 'Construction',  value: d.construction  },
+      { label: 'Width',         value: d.width         },
+      { label: 'Thickness',     value: d.thickness     },
+      { label: 'Veneer',        value: d.veneer        },
+      { label: 'Finish',        value: d.finish        },
+      { label: 'Lengths',       value: d.lengths       },
+      { label: 'Price',         value: '$' + d.price + '/sq.ft.' },
+      { label: 'SKU',           value: d.sku           },
+    ];
+    document.getElementById('modal-specs').innerHTML = specs
+      .filter(s => s.value)
+      .map(s => `<div class="modal-spec"><div class="label">${s.label}</div><div class="value">${s.value}</div></div>`)
+      .join('');
+
+    document.getElementById('modal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    document.getElementById('modal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+</script>
+
+</body>
+</html>
