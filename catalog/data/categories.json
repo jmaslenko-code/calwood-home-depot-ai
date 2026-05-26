@@ -1,0 +1,92 @@
+[
+  {
+    "id": "engineered-hardwood",
+    "name": "Engineered Hardwood Flooring",
+    "slug": "engineered-hardwood",
+    "short_description": "Wire brushed European White Oak engineered hardwood with a 3.5mm veneer and 50-year finish warranty. Available in multiple collections, widths, and colors.",
+    "use_case": "Installs as the primary floor surface in living rooms, bedrooms, hallways, and open-concept spaces over wood subfloor or concrete.",
+    "badge_quotecenter": true,
+    "badge_matching": true
+  },
+  {
+    "id": "stair-treads",
+    "name": "Stair Treads",
+    "slug": "stair-treads",
+    "short_description": "Unfinished European White Oak stair treads, 1-1/16\" thick × 11.5\" wide, available in multiple lengths from 36\" to 72\".",
+    "use_case": "Replaces the horizontal walking surface of each stair step to match the flooring species and be finished on-site.",
+    "badge_quotecenter": true,
+    "badge_matching": true
+  },
+  {
+    "id": "risers",
+    "name": "Stair Risers",
+    "slug": "risers",
+    "short_description": "Unfinished European White Oak risers, 0.75\" thick × 7.5\" wide, available in multiple lengths.",
+    "use_case": "Covers the vertical face between stair steps for a clean, finished staircase appearance.",
+    "badge_quotecenter": true,
+    "badge_matching": true
+  },
+  {
+    "id": "stair-nose",
+    "name": "Stair Nose",
+    "slug": "stair-nose",
+    "short_description": "Matching stair nose profiles that cap the exposed leading edge of flooring where it meets the top or intermediate stair step.",
+    "use_case": "Caps the exposed edge of flooring at the top of a stair step for a safe, finished transition.",
+    "badge_quotecenter": true,
+    "badge_matching": true
+  },
+  {
+    "id": "reducer",
+    "name": "Reducer",
+    "slug": "reducer",
+    "short_description": "Matching wood reducer moldings that transition hardwood flooring down to an adjacent lower-height surface.",
+    "use_case": "Transitions flooring down to a lower surface like tile or carpet at room thresholds and doorways.",
+    "badge_quotecenter": true,
+    "badge_matching": true
+  },
+  {
+    "id": "t-molding",
+    "name": "T-Molding",
+    "slug": "t-molding",
+    "short_description": "Matching T-molding profiles that bridge two floors of equal height at doorways or open room transitions.",
+    "use_case": "Bridges two equal-height flooring surfaces at doorways or room transitions for a seamless, clean look.",
+    "badge_quotecenter": true,
+    "badge_matching": true
+  },
+  {
+    "id": "end-cap",
+    "name": "End Cap",
+    "slug": "end-cap",
+    "short_description": "Matching end cap moldings that provide a finished termination where hardwood flooring meets a wall, step, or vertical surface.",
+    "use_case": "Finishes a flooring edge against a wall or vertical surface where no transition to another floor is needed.",
+    "badge_quotecenter": true,
+    "badge_matching": true
+  },
+  {
+    "id": "baby-threshold",
+    "name": "Baby Threshold",
+    "slug": "baby-threshold",
+    "short_description": "Low-profile matching wood thresholds for doorway transitions where minimal height change is required.",
+    "use_case": "Creates a smooth low-profile transition at doorways between same-level or near-same-level surfaces.",
+    "badge_quotecenter": true,
+    "badge_matching": true
+  },
+  {
+    "id": "wood-vent",
+    "name": "Wood Vents / Registers",
+    "slug": "wood-vent",
+    "short_description": "Matching wood floor vents and registers milled from the same species as the flooring for a seamless, integrated look.",
+    "use_case": "Replaces standard metal floor vents with matching wood for a seamless, high-end look throughout the space.",
+    "badge_quotecenter": false,
+    "badge_matching": true
+  },
+  {
+    "id": "custom-profile",
+    "name": "Custom Profiles",
+    "slug": "custom-profile",
+    "short_description": "Made-to-order custom milled trim profiles to match any Calwood flooring product — any species, finish, and profile shape.",
+    "use_case": "Made-to-order trim profiles to match any Calwood flooring product where a standard profile does not fit the project.",
+    "badge_quotecenter": true,
+    "badge_matching": true
+  }
+]
